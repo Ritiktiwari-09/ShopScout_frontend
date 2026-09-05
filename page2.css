@@ -7,6 +7,83 @@
 body {
     font-family: Georgia, "Times New Roman", serif;
     background: #000;
+    background-color: white;
+}
+/* Container layout for filter bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Base styles for filter dropdowns */
+.filter-pill {
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  padding-right: 28px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1f2937;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="black"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.filter-pill:hover {
+  background-color: #d1d5db;
+}
+
+/* Open Now Toggle Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background-image: none;
+  padding-right: 12px;
+}
+
+.toggle-container input {
+  display: none;
+}
+
+/* Toggle Switch Bar */
+.slider {
+  width: 32px;
+  height: 18px;
+  background-color: #9ca3af;
+  border-radius: 12px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Toggle Knob */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* Active State for Toggle Switch */
+.toggle-container input:checked + .slider {
+  background-color: #10b981;
+}
+
+.toggle-container input:checked + .slider::before {
+  transform: translateX(14px);
 }
 
 .page {
@@ -234,6 +311,10 @@ body {
     background: white;
     margin-bottom: 10px;
     border:#000 solid 4px;
+     border-bottom-left-radius: 20%, 100px;   
+  border-bottom-right-radius: 20%,100px; 
+  border-top-right-radius: 20%,100px;
+  border-top-left-radius: 20%,100px; 
 }
 
 .shop-card h2 {
@@ -271,6 +352,15 @@ body {
 .location-btn:hover {
     background: #007dcc;
 }
+
+.suggestion {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+font-family: cursive;
+}
+
+
 /* Card Box Setup */
 .product-card {
   display: flex;               
@@ -283,7 +373,8 @@ body {
   width: calc(100% - 5px);         
   max-width: 1000px;            
   box-sizing: border-box;
-  margin-top: 30px;                    
+  margin-top: 30px;    
+            
 }
 
 /* Image Styling */
