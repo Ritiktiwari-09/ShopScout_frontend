@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopScout - Search Results</title>
+
+    <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <header class="header">
+
+            <button class="back-btn" onclick="goBack()">
+                <span><a href="page.html">Back</a></span>
+            </button>
+
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="search products and services...">
+                <button onclick="searchShops()">🔍</button>
+            </div>
+
+
+            <button class="filter-btn" onclick="toggleFilters()">
+                Filter Box 
+            </button>
+
+        </header>
+
+
+
+        <div class="filter-panel" id="filterPanel">
+
+ </label>
+
+            <label>
+                Distance
+                <select id="distanceFilter">
+                    <option value="all">Any distance</option>
+                    <option value="1">Within  500m</option>
+                    <option value="3">Within 1 km</option>
+                    <option value="5">Within above 3 km</option>
+                </select>
+            </label>
+
+            <button onclick="applyFilters()">Apply Filter</button>
+
+        </div>
+
+            <!--<label>
+                <button> price</button>
+                price range
+                <select id="maxprice">
+                    <option value="All">Any price</option>
+                    <option value="100-200">₹100-₹200</option>
+                    <option value="200-500">₹200-₹500</option>
+                    <option value="500-1000">₹500-₹1000</option>
+                    <option value="1000-1200">₹1000-₹1200</option>
+                    <option value="Max">Max price</option>
+                </select>
+            
+                <label for="maxprice">Price range:</label>
+<select id="maxprice">
+    <option value="All">Any price</option>
+    <option value="100-200">₹100-₹200</option>
+    <option value="200-500">₹200-₹500</option>
+    <option value="500-1000">₹500-₹1000</option>
+    <option value="1000-1200">₹1000-₹1200</option>
+    <option value="Max">Max price</option>
+</select>
+
+<button>Price</button>
+
+
+<div class="price-filter">
+  <button class="price-btn">Price</button>
+  
+  <label for="maxprice">Range:</label>
+  <select id="maxprice">
+    <option value="All">Any price</option>
+    <option value="100-200">₹100-₹200</option>
+    <option value="200-500">₹200-₹500</option>
+    <option value="500-1000">₹500-₹1000</option>
+    <option value="1000-1200">₹1000-₹1200</option>
+    <option value="Max">Max price</option>
+  </select>
+</div>
+-->
+
+
+
+           
+
+
+
+        <main>
+
+
+            <section class="result-heading">
+
+                <h1>Search Results</h1>
+
+                <p>
+                    <span id="shopCount">3</span> shops found for '
+                    <span id="productName"><b>USB C-Type cable</b></span> near you
+                </p>
+
+            </section>
+
+
+
+            <section class="quick-filters">
+
+                <button onclick="sortDistance()">
+                    Distance
+                    <span>▾ </span>
+                </button>
+
+                <button onclick="sortPrice()">
+                    Price
+                    <span>▾</span>
+                </button>
+
+                <label class="open-filter">
+                    Open now
+
+                    <input
+                        type="checkbox"
+                        id="openNow"
+                        onchange="filterOpenShops()"
+                    >
+
+                    <span class="toggle"></span>
+                </label>
+
+                <button class="sort-btn" onclick="sortShops()">
+                    Sort by
+                    <span>▾</span>
+                </button>
+
+            </section>
+
+
+
+            <section class="shop-container" id="shopContainer">
+
+
+
+                <div class="shop-card" data-price="120" data-distance="0.8" data-open="true">
+
+                    <img src="https://i.pinimg.com/736x/5e/8e/b7/5e8eb76f3b13843ee4a0cadfdc88b1f8.jpg" alt="type c cable"
+
+                    <h2><b>MOVIL CELL</b></h2>
+                    <p class="rating">
+                        ⭐ 4.5 &nbsp; • &nbsp; 0.8 km
+                    </p>
+
+                    <p class="price">
+                       <b>available at only ₹99</b>
+                    </p>
+
+                    <p class="time">
+
+                        Open: 8:00 AM - 10:00 PM
+                    </p>
+
+                    <button class="location-btn" onclick="getLocation('MOVIL CELL')">
+                        Get location
+                    </button>
+
+                </div>
+
+
+
+                <div class="shop-card" data-price="135" data-distance="1.4" data-open="true">
+
+                    <img src="https://i.pinimg.com/736x/e8/07/57/e80757bcff5cbcbedf32d60f632ef04b.jpg" alt="Phone mart">
+
+                    <h2><b>Phone Mart</b></h2>
+
+                    <p class="rating">
+                        ⭐ 4.3 &nbsp; • &nbsp; 1.4 km
+                    </p>
+
+                    <p class="price">
+                       <b> available at only ₹135</b>
+                    </p>
+
+                    <p class="time">
+                        Open: 9:00 AM - 9:00 PM
+                    </p>
+
+                    <button class="location-btn" onclick="getLocation('Phone Mart')">
+                        Get location
+                    </button>
+
+                </div>
+
+
+
+                <div class="shop-card" data-price="150" data-distance="2.1" data-open="false">
+
+                    <img src="https://i.pinimg.com/736x/e6/95/bc/e695bcc725d6d06bd60d94b6a923427e.jpg" alt="Supermarket">
+
+                    <h2><b>Accessories Store</b></h2>
+                    <p class="rating">
+                        ⭐ 4.1 &nbsp; • &nbsp; 2.1 km
+                    </p>
+
+                    <p class="price">
+                        <b>available at only ₹150</b>
+                    </p>
+
+                    <p class="time">
+                        Closed • Opens 8:00 AM
+                    </p>
+
+                    <button class="location-btn" onclick="getLocation('Accessories Store')">
+                        Get location
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Product Section--> 
+             <section class="product-section">
+        <div class="product-card">
+    
+    <!-- this will create Left Side: Image Container -->
+    <div class="image-box">
+      
+      <img src="https://i.pinimg.com/736x/fe/ad/ac/feadac6f7940677e56dbfde25326b50f.jpg" alt="Product Image">
+    </div>
+
+    <!-- this will create Right Side: Details Container -->
+    <div class="details-box">
+      <h5 class="product-name">USB-C PD Fast Charger Adaptor UK Plug 20W for iPhone 14 13 12 Pro Max</h5>
+      <p class="offer">40% off</p>
+      <p class="price">₹1299</p>
+    </div>
+
+  </div>
+
+   <div class="product-card">
+    
+    <div class="image-box">
+      
+      <img src="https://i.pinimg.com/736x/ee/c8/e1/eec8e14fc9376eef54c94f7d14c81853.jpg" alt="Product Image">
+    </div>
+
+   
+    <div class="details-box">
+      <h5 class="product-name"> Spiral cable protector. Save your charging cables from breaking with these flexible spiral protectors</h5>
+      <p class="offer">30% off</p>
+      <p class="price">₹99</p>
+    </div>
+
+  </div>
+
+   <div class="product-card">
+    
+   
+    <div class="image-box">
+      
+      <img src="https://i.pinimg.com/736x/97/15/d2/9715d26b3195e5d5c66eea35c1110fdd.jpg" alt="Product Image">
+    </div>
+
+   
+    <div class="details-box">
+      <h5 class="product-name"> Power Source Extension circuit</h5>
+      <p class="offer">30% off</p>
+      <p class="price">₹399</p>
+    </div>
+
+    </div>
+
+    <div class="product-card">
+    
+
+    <div class="image-box">
+      
+      <img src="https://i.pinimg.com/1200x/89/dd/b4/89ddb46416526f7df3d488b770a6ee18.jpg" alt="Product Image">
+    </div>
+
+    <div class="details-box">
+      <h5 class="product-name">USB-C Headphones for iPhones and android — Premium Type‑C Earphones with Built‑in Microphone and Remote Control. Designed for crystal‑clear audio, these earphones deliver immersive sound quality with deep bass and balanced tones.</h5>
+      <p class="offer">50% off</p>
+      <p class="price">₹300</p>
+    </div>
+
+</main>
+</section>
+</body>
+
+</html>
+
+</html>

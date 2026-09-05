@@ -1,0 +1,369 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #000;
+}
+
+.page {
+    width: 70%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #f4f4f4;
+    border: 3px solid #0099ff;
+    padding: 18px 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 32px;
+}
+
+.back-btn {
+    width: 85px;
+    height: 38px;
+    border: none;
+    background: #ddd;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.back-btn span {
+    line-height: 16px;
+}
+
+.search-box {
+    width: 58%;
+    height: 36px;
+    display: flex;
+    background: #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 10px;
+    text-align: left;
+    font-family:sans-serif;
+    font-size: 12px;
+}
+
+.search-box input::placeholder {
+    color: #111;
+}
+
+.search-box button {
+    width: 45px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.filter-btn {
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    background: #ddd;
+    font-family: Georgia, "Times New Roman", serif;
+    cursor: pointer;
+}
+
+.filter-panel {
+    display: none;
+    background: #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.filter-panel.active {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-panel label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.filter-panel select {
+    padding: 7px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: white;
+}
+
+.filter-panel label button {
+    border: none;
+    background: #ccc;
+    padding: 5px 10px;
+}
+
+.filter-panel>button {
+    background: #0099ff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    cursor: pointer;
+}
+
+.result-heading {
+    margin-left: 5px;
+    margin-bottom: 18px;
+}
+
+.result-heading h1 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.result-heading p {
+    font-size: 14px;
+}
+
+.quick-filters {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.quick-filters button,
+.open-filter {
+    border: none;
+    background: #ddd;
+    border-radius: 15px;
+    padding: 4px 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.quick-filters .sort-btn {
+    margin-left: auto;
+    padding: 7px 14px;
+}
+
+.open-filter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.open-filter input {
+    display: none;
+}
+
+
+.toggle {
+    width: 25px;
+    height: 12px;
+    background: #aaa;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.toggle::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 1.5px;
+    transition: 0.2s;
+}
+
+.open-filter input:checked+.toggle {
+    background: #00aaff;
+}
+
+.open-filter input:checked+.toggle::after {
+    left: 14px;
+}
+
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    align-items: stretch;
+}
+
+.shop-card {
+    background: #ddd;
+    min-height: 278px;
+    padding: 14px 7px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.shop-card:hover {
+    transform: translateY(-3px);
+}
+
+.shop-card img {
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+    background: white;
+    margin-bottom: 10px;
+    border:#000 solid 4px;
+}
+
+.shop-card h2 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.rating {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.time {
+    font-size: 13px;
+    margin-bottom: 14px;
+    font-family:sans-serif;
+}
+
+.location-btn {
+    background: rgb(141, 145, 141);
+    border: none;
+    border-radius: 14px;
+    padding: 8px 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.location-btn:hover {
+    background: #007dcc;
+}
+/* Card Box Setup */
+.product-card {
+  display: flex;               
+  flex-direction: row;        
+  justify-content: space-between; 
+  align-items: center;         
+  padding: 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #080808;
+  width: calc(100% - 5px);         
+  max-width: 1000px;            
+  box-sizing: border-box;
+  margin-top: 30px;                    
+}
+
+/* Image Styling */
+.image-box {
+  width: 300px;
+  height: 250px;
+  flex-shrink: 0;              
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           
+  display: block;
+}
+
+/* Text Details Alignment */
+.details-box {
+  text-align: right;
+  display: flex;            
+  flex-direction: column;
+  gap: 10px;                     
+}
+
+.product-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.offer {
+  margin: 0;
+  color: #cc0c39;
+  font-size: 13px;
+}
+
+.price {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .page {
+        width: 95%;
+    }
+    .shop-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-wrap: wrap;
+    }
+    .search-box {
+        order: 3;
+        width: 100%;
+    }
+    .shop-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .product-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .quick-filters {
+        flex-wrap: wrap;
+    }
+    .quick-filters .sort-btn {
+        margin-left: 0;
+    }
+}

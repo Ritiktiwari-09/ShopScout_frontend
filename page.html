@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopScout</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="hero">
+
+        <nav class="navbar">
+
+            <div class="logo">
+                SHOP<span>SCOUT</span>
+            </div>
+             <div class="nav-links">
+                <a href="#Home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#shops">Shops</a>
+                <a href="#about">About</a>
+            </div> 
+
+            <button class="login-button " id="loginButton">
+                <img src="images (1).jpg" alt="login profile picture" class="login-profile-picture">
+                <span class="login-text"><a href="forms.html">Login here</a></span>
+            </button>
+
+        </nav>
+        <div class="hero-content">
+            <p class="small-heading">
+                DISCOVER LOCAL SHOPS
+            </p>
+            <h1>
+                KNOW BEFORE YOU GO!
+            </h1>
+
+            <p class="hero-description">
+                Find nearby stores, compare products and discover local prices before you visit.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-container">
+
+                <select id="location">
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="science city">science city</option>
+                <option value="Sola">Sola</option>
+                <option value="chandkheda">chandkheda</option>
+                 <option value="Sabarmati">Sabarmati</option>
+            </select>
+
+                <input type="text" id="searchInput" placeholder="Search here...">
+                
+                <button id="searchButton">
+                 🔍Search
+            </button>
+
+            </div>
+
+
+            <!-- POPULAR SEARCH -->
+
+            <div class="popular-search">
+
+                <span>POPULAR SEARCHES:</span>
+
+                <button class="popularbutton">Phones</button>
+                <button class="popularbutton">Milk</button>
+                <button class="popularbutton">Restaurant</button>
+                <button class="popularbutton">Hardware</button>
+                <button class="popularbutton">Grocery</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= CATEGORY ================= -->
+
+    <section class="categories-section" id="categories">
+
+        <div class="section-title">
+
+            <h2>
+                Search by Category
+            </h2>
+
+            <button id="viewAll">
+            <span class="view-all"><a href="page2.html">View All Category</a></span>
+        </button>
+
+        </div>
+
+
+        <!-- HORIZONTAL CATEGORY CONTAINER -->
+
+        <div class="category-container">
+
+            <button class="category-arrow left" id="leftArrow">
+            ‹
+        </button>
+
+
+            <div class="category-scroll" id="categoryScroll">
+
+
+                <!-- GROCERY -->
+
+                <button class="category-card active" data-category="Grocery">
+
+                <img src="grocery.jpg" alt="Grocery">
+
+                <span>
+                    Grocery Shop
+                </span>
+
+            </button>
+
+
+                <!-- STATIONERY -->
+
+                <button class="category-card" data-category="Stationery">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROLwWB0DupM4axzz_TltSYXu-gvN6mJhCuGA6oBN8qxA&s=10"
+                    alt="Stationery">
+
+                <span>
+                    Stationery Shop
+                </span>
+
+            </button>
+
+
+                <!-- ELECTRONICS -->
+
+                <button class="category-card" data-category="Electronics">
+
+                <img
+                    src="https://i.pinimg.com/originals/cf/d2/fd/cfd2fd0ba8a6e2d958b969fbf2953a8c.jpg"
+                    alt="Electronics">
+
+                <span>
+                    Electronic Shop
+                </span>
+
+            </button>
+
+
+                <!-- MEDICAL -->
+
+                <button class="category-card" data-category="Medical">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF-pJqWOEDmFmDEVCwRi-n0cDxReyf1t8ikUNKuynXEw&s=10"
+                    alt="Pharmacy">
+
+                <span>
+                    Pharmacy
+                </span>
+
+            </button>
+
+
+                <!-- EMERGENCY -->
+
+                <button class="category-card" data-category="Emergency">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1NBwCiwgO_91vTgUdSNQe7OJ8jKPmcmcKTKmB6RMGg&s=10"
+                    alt="Emergency">
+
+                <span>
+                    Emergency Place
+                </span>
+
+            </button>
+
+
+                <!-- RESTAURANT -->
+
+                <button class="category-card" data-category="Restaurant">
+
+                <img
+                    src="https://foodandbeverage-accor.imgix.net/https%3A%2F%2Fwww.ahstatic.com%2Fphotos%2F1400_rsr002_00_p_3000x2250.jpg?ixlib=js-3.8.0&auto=compress&fm=webp&s=341715ecbbb3826a26bb320762deca85"
+                    alt="Restaurant">
+
+                <span>
+                    Restaurant
+                </span>
+
+            </button>
+
+                <button class="category-card" data-category="Hardware">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLZFAMfcMHkHrnw2Wxvwq4Bpu2Tpg3blLIXvO16IW_iQ&s=10"
+                    alt="Hardware">
+
+                <span>
+                    Hardware Shop
+                </span>
+
+            </button>
+
+
+                <!-- CLOTHING -->
+
+                <button class="category-card" data-category="Clothing">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSINI2Al8vXVo6IkatRWH2LDEXScgyv40cI2GnO2TP5hw&s=10"
+                    alt="Clothing">
+
+                <span>
+                    Cloths
+                </span>
+
+            </button>
+
+            </div>
+
+
+            <button class="category-arrow right" id="rightArrow">
+            ›
+        </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SHOP SECTION ================= -->
+
+    <section class="shop-section" id="shops">
+
+
+        <!-- TOP RATED SHOPS -->
+
+        <div class="shops-card">
+
+            <div class="shops-heading">
+
+                <div>
+
+                    <h2 id="shopTitle">
+                        Top Rated Grocery Shops
+                    </h2>
+
+                    <p id="shopSubtitle">
+                        Nearby stores with the best ratings
+                    </p>
+
+                </div>
+
+
+                <select id="sort">
+                <option>Top Rated</option>
+                <option>Nearest</option>
+                <option>Lowest Price</option>
+            </select>
+
+            </div>
+
+
+            <div id="shopList">
+
+                <!-- SHOP 1 -->
+
+                <div class="shop">
+
+                    <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202501/67847cb67ee40-dmart-stock-mofsl-said-the-competitive-intensity-has-increased-significantly-following-the-recent-f-133840714-16x9.jpg?size=948:533" alt="Shop">
+
+                    <div class="shop-info">
+
+                        <h3>
+                            D MART
+                        </h3>
+
+                        <p>
+                            Supermarket 
+                        </p>
+
+                        <span>
+                        ★ 4.8 RATING
+                    </span>
+
+                    </div>
+
+                    <div class="shop-distance">
+                        1.5 KM
+                    </div>
+
+                </div>
+
+
+                <!-- SHOP 2 -->
+
+                <div class="shop">
+
+                    <img src="https://florafountain.com/wp-content/uploads/2025/08/312604655-3027563900874006-3613273122254254574-n-1681473125.jpg" alt="Shop">
+
+                    <div class="shop-info">
+
+                        <h3>
+                           ZUDIO
+                        </h3>
+
+                        <p>
+                            fast-fashion and lifestyle
+                        </p>
+
+                        <span>
+                        ★ 4.6 RATING
+                    </span>
+
+                    </div>
+
+                    <div class="shop-distance">
+                        1.3 KM
+                    </div>
+
+                </div>
+
+                <!-- SHOP 3 -->
+
+                <div class="shop">
+
+                    <img src="https://www.byblos.com/wp-content/uploads/Restaurant-IL-Giardino_Hotel-Byblos_Saint-Tropez-%C2%A9Stephan-Julliard-7-1600x1000.jpg" alt="Shop">
+
+                    <div class="shop-info">
+
+                        <h3>
+                         Restaurant
+                        </h3>
+
+                        <p>
+                            Italian Restaurant
+                        </p>
+
+                        <span>
+                        ★ 4.6 RATING
+                    </span>
+
+                    </div>
+
+                    <div class="shop-distance">
+                        3.3 KM
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOPKEEPER CARD -->
+
+        <div class="shopkeeper-card">
+
+            <div class="shopkeeper-content">
+
+                <p class="shopkeeper-title">
+                    <b>ARE YOU A SHOPKEEPER?</b>
+                </p>
+
+                <h2>
+                    List your shop and reach more customers.
+                </h2>
+
+                <p>
+                    List your shop for free and let hundreds of nearby customers know you.
+                </p>
+
+                <p>
+                    Register your shop today!
+                </p>
+
+                <button id="registerButton">
+                Register
+            </button>
+
+            </div>
+
+
+            <img src="Screenshot 2026-09-05 192021.png" class="shopkeeper-image" alt="Shopkeeper">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAP ================= -->
+
+    <section class="map-section">
+
+        <div class="map-overlay">
+
+            <h2>
+                Find Local Shops Near You
+            </h2>
+
+            <p>
+                Download the ShopScout app to track daily grocery prices, check nearby stores and discover trusted local businesses.
+            </p>
+
+            <button id="mapButton">
+           <a href="https://www.google.com/maps/@23.1149455,72.5605684,7859m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D">Explore Local Map →</a> 
+        </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="about">
+
+        <div class="footer-about">
+
+            <div class="footer-logo">
+                SHOP<span>SCOUT</span>
+            </div>
+
+            <p>
+                ShopScout is India's premier hyperlocal pricing engine. Our mission is to keep local consumers transparent, supporting online merchants against heavy price comparison markets.
+            </p>
+
+            <div class="social-icons">
+
+                <button><a href="https://www.facebook.com/">f</a></button>
+                <button><a href="https://twitter.com/">x</a></button>
+                <button><a href="https://www.youtube.com/">▶</a></button>
+                <button><a href="https://www.linkedin.com/">in</a></button>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                CONSUMERS
+            </h3>
+
+            <a href="#">
+            Compare Groceries
+        </a>
+
+            <a href="#">
+            Local Repair Services
+        </a>
+
+            <a href="#">
+            How ShopScout Works
+        </a>
+
+            <a href="#">
+            Information About Your Local Market
+        </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                MERCHANTS
+            </h3>
+
+            <a href="#">
+            Claim Your Store
+        </a>
+
+            <a href="#">
+            Update Store Details
+        </a>
+
+            <a href="#">
+            Update Shop Prices
+        </a>
+
+            <a href="#">
+            Advertise With Us
+        </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                COMPANY
+            </h3>
+
+            <a href="#">
+            About Us
+        </a>
+
+            <a href="#">
+            Local Insights
+        </a>
+
+            <a href="#">
+            Privacy Policy
+        </a>
+
+            <a href="#">
+            Contact / Support
+        </a>
+
+        </div>
+
+    </footer>
+
+
+    <div class="toast" id="toast">
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
