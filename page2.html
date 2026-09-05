@@ -20,7 +20,6 @@
                 <span><a href="page.html">Back</a></span>
             </button>
 
-
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="search products and services...">
                 <button onclick="searchShops()">🔍</button>
@@ -32,8 +31,6 @@
             </button>
 
         </header>
-
-
 
         <div class="filter-panel" id="filterPanel">
 
@@ -52,52 +49,7 @@
             <button onclick="applyFilters()">Apply Filter</button>
 
         </div>
-
-            <!--<label>
-                <button> price</button>
-                price range
-                <select id="maxprice">
-                    <option value="All">Any price</option>
-                    <option value="100-200">₹100-₹200</option>
-                    <option value="200-500">₹200-₹500</option>
-                    <option value="500-1000">₹500-₹1000</option>
-                    <option value="1000-1200">₹1000-₹1200</option>
-                    <option value="Max">Max price</option>
-                </select>
-            
-                <label for="maxprice">Price range:</label>
-<select id="maxprice">
-    <option value="All">Any price</option>
-    <option value="100-200">₹100-₹200</option>
-    <option value="200-500">₹200-₹500</option>
-    <option value="500-1000">₹500-₹1000</option>
-    <option value="1000-1200">₹1000-₹1200</option>
-    <option value="Max">Max price</option>
-</select>
-
-<button>Price</button>
-
-
-<div class="price-filter">
-  <button class="price-btn">Price</button>
-  
-  <label for="maxprice">Range:</label>
-  <select id="maxprice">
-    <option value="All">Any price</option>
-    <option value="100-200">₹100-₹200</option>
-    <option value="200-500">₹200-₹500</option>
-    <option value="500-1000">₹500-₹1000</option>
-    <option value="1000-1200">₹1000-₹1200</option>
-    <option value="Max">Max price</option>
-  </select>
-</div>
--->
-
-
-
-           
-
-
+       
 
         <main>
 
@@ -114,40 +66,38 @@
             </section>
 
 
+ <div class="filter-bar">
+  <!-- Distance Filter -->
+  <select name="distance" class="filter-pill">
+    <option value="" disabled selected>Distance</option>
+    <option value="1">Within 1 km</option>
+    <option value="5">Within 5 km</option>
+    <option value="10">Within 10 km</option>
+  </select>
 
-            <section class="quick-filters">
+  <!-- Price Filter -->
+  <select name="price" class="filter-pill">
+    <option value="" disabled selected>Price</option>
+    <option value="low">Under ₹100</option>
+    <option value="mid">₹100 - ₹500</option>
+    <option value="high">₹500+</option>
+  </select>
 
-                <button onclick="sortDistance()">
-                    Distance
-                    <span>▾ </span>
-                </button>
+  <!-- Open Now Toggle Switch -->
+  <label class="filter-pill toggle-container">
+    <span>Open now</span>
+    <input type="checkbox" id="openNow">
+    <span class="slider"></span>
+  </label>
 
-                <button onclick="sortPrice()">
-                    Price
-                    <span>▾</span>
-                </button>
-
-                <label class="open-filter">
-                    Open now
-
-                    <input
-                        type="checkbox"
-                        id="openNow"
-                        onchange="filterOpenShops()"
-                    >
-
-                    <span class="toggle"></span>
-                </label>
-
-                <button class="sort-btn" onclick="sortShops()">
-                    Sort by
-                    <span>▾</span>
-                </button>
-
-            </section>
-
-
-
+  <!-- Sort By Filter -->
+  <select name="sort" class="filter-pill">
+    <option value="" disabled selected>Sort by</option>
+    <option value="rating">Rating: High to Low</option>
+    <option value="distance">Distance: Nearest First</option>
+    <option value="price_low">Price: Low to High</option>
+  </select>
+</div>
             <section class="shop-container" id="shopContainer">
 
 
@@ -175,8 +125,6 @@
                     </button>
 
                 </div>
-
-
 
                 <div class="shop-card" data-price="135" data-distance="1.4" data-open="true">
 
@@ -218,7 +166,7 @@
                     </p>
 
                     <p class="time">
-                        Closed • Opens 8:00 AM
+                        Opens 8:00 AM -8:00 PM
                     </p>
 
                     <button class="location-btn" onclick="getLocation('Accessories Store')">
@@ -226,10 +174,16 @@
                     </button>
 
                 </div>
+    
+            
 
-            </section>
-
-
+            <div class="suggestion">
+                <div>
+                  <h4> SIMILAR PRODUCTS  </h4> 
+                </div>
+            
+            </div>
+</section>
             <!-- Product Section--> 
              <section class="product-section">
         <div class="product-card">
