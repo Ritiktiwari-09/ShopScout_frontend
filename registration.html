@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopScout - Shopkeeper Registration</title>
+
+    <link rel="stylesheet" href="REGISTRATION.CSS">
+
+</head>
+
+
+<body>
+
+
+
+
+    <header class="header">
+
+        <div class="logo">
+
+            Shop<span>Scout</span>
+
+        </div>
+
+
+        <button class="back-button" onclick="goBack()">
+
+            ← Back
+
+        </button>
+
+    </header>
+
+
+
+
+
+    <main class="registration-container">
+
+
+        <div class="registration-card">
+
+
+            <!-- TITLE -->
+
+            <div class="heading">
+
+                <h1>
+                    Register Your Shop
+                </h1>
+
+                <p>
+                    Join ShopScout and help nearby customers discover your shop.
+                </p>
+
+            </div>
+
+
+
+            <!-- PROGRESS -->
+
+            <div class="progress">
+
+                <div class="progress-step active">
+                    <span>1</span> Personal Details
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+                    <span>2</span> Shop Details
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+                    <span>3</span> Location
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="shopkeeperForm">
+
+
+
+
+                <section class="form-section">
+
+                    <h2>
+                        Personal Details
+                    </h2>
+
+                    <p class="section-description">
+                        Enter the shopkeeper's basic information.
+                    </p>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Full Name *
+                            </label>
+
+                            <input type="text" id="ownerName" placeholder="Enter full name" required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Mobile Number *
+                            </label>
+
+                            <input type="tel" id="mobile" placeholder="Enter mobile number" maxlength="10" required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input type="email" id="email" placeholder="Enter email address">
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                GST Number *
+                            </label>
+
+                            <input type="text" id="gst Number" placeholder="Enter GST number"
+                                pattern="[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}" required>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+
+
+                <section class="form-section">
+
+                    <h2>
+                        Shop Details
+                    </h2>
+
+                    <p class="section-description">
+                        Tell customers about your shop.
+                    </p>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Shop Name *
+                            </label>
+
+                            <input type="text" id="shopName" placeholder="Enter shop name" required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Shop Type *
+                            </label>
+
+                            <select id="shopType" required>
+
+                                <option value="">
+                                    Select shop type
+                                </option>
+
+                                <option>
+                                    Grocery Shop
+                                </option>
+
+                                <option>
+                                    Stationery Shop
+                                </option>
+
+                                <option>
+                                    Electronic Shop
+                                </option>
+
+                                <option>
+                                    Medical Store
+                                </option>
+
+                                <option>
+                                    Clothing Store
+                                </option>
+
+                                <option>
+                                    Hardware Shop
+                                </option>
+
+                                <option>
+                                    Restaurant
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="input-group full">
+
+                            <label>
+                                Products / Services *
+                            </label>
+
+                            <input type="text" id="products" placeholder="Example: Grocery, vegetables, dairy products"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Opening Time
+                            </label>
+
+                            <input type="time" id="openingTime">
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Closing Time
+                            </label>
+
+                            <input type="time" id="closingTime">
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+
+
+                <section class="form-section">
+
+                    <h2>
+                        Shop Location
+                    </h2>
+
+                    <p class="section-description">
+                        Add your shop location so customers can find you easily.
+                    </p>
+
+
+
+                    <div class="input-group full">
+
+                        <label>
+                            Shop Address *
+                        </label>
+
+                        <textarea id="address" placeholder="Enter complete shop address" required></textarea>
+
+                    </div>
+
+
+
+
+
+                    <button type="button" class="location-button" id="getLocation">
+
+                        📍 Use My Current Location
+
+                    </button>
+
+
+                    <span id="locationStatus">
+                        Location not selected
+                    </span>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        </section>
+
+
+
+
+
+        <div class="terms">
+
+            <input type="checkbox" id="terms" required>
+
+            <label for="terms">
+
+                I confirm that the information provided
+                by me is correct.
+
+            </label>
+
+        </div>
+
+
+
+
+
+        <div class="form-buttons">
+
+            <button type="button" class="cancel-button" onclick="goBack()">
+
+                Cancel
+
+            </button>
+
+
+            <button type="submit" class="submit-button">
+
+                Register Shop →
+
+            </button>
+
+        </div>
+
+
+        </form>
+
+        </div>
+
+    </main>
+
+
+
+
+
+    <div class="success-popup" id="successPopup">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Registration Successful!
+            </h2>
+
+            <p>
+                Your shop registration has been submitted successfully.
+            </p>
+
+            <button onclick="closeSuccess()">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src=" "></script>
+
+</body>
+
+</html>
